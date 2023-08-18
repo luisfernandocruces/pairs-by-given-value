@@ -1,0 +1,19 @@
+{
+  "name": "pairs-by-given-value",
+  "version": "1.0.0",
+  "description": "Algorithm exercise for Mach Eight",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisfernandocruces/pairs-by-given-value.git"
+  },
+  "author": "Luis Fernando Cruces",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisfernandocruces/pairs-by-given-value/issues"
+  },
+  "homepage": "https://github.com/luisfernandocruces/pairs-by-given-value#readme"
+}
