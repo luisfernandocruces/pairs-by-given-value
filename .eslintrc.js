@@ -19,5 +19,8 @@ module.exports = {
   parserOptions: {
     ecmaVersion: "latest",
   },
-  rules: {},
+  rules: {
+    "no-console": "off",
+    "no-await-in-loop": "off",
+  },
 };
