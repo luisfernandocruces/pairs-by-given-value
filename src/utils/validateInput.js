@@ -16,6 +16,20 @@ const validateInput = (input) => {
     return false;
   }
 
+  if (
+    valueNumber >= Number.MAX_SAFE_INTEGER ||
+    numbersArray.some((number) => number >= Number.MAX_SAFE_INTEGER)
+  ) {
+    return false;
+  }
+
+  if (
+    valueNumber <= Number.MIN_SAFE_INTEGER ||
+    numbersArray.some((number) => number <= Number.MIN_SAFE_INTEGER)
+  ) {
+    return false;
+  }
+
   return true;
 };
 

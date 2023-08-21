@@ -54,4 +54,24 @@ describe("validateInput tests", () => {
     const isValidInput2 = validateInput(input2);
     assert.ok(isValidInput2 === false);
   });
+
+  it("should fail because the input contains a number greater than MAX_SAFE_INTEGER", () => {
+    const input1 = `${Number.MAX_SAFE_INTEGER} 10`;
+    const isValidInput1 = validateInput(input1);
+    assert.ok(isValidInput1 === false);
+
+    const input2 = `10 ${Number.MAX_SAFE_INTEGER}`;
+    const isValidInput2 = validateInput(input2);
+    assert.ok(isValidInput2 === false);
+  });
+
+  it("should fail because the input contains a number lower than MIN_SAFE_INTEGER", () => {
+    const input1 = `${Number.MIN_SAFE_INTEGER} 10`;
+    const isValidInput1 = validateInput(input1);
+    assert.ok(isValidInput1 === false);
+
+    const input2 = `10 ${Number.MIN_SAFE_INTEGER}`;
+    const isValidInput2 = validateInput(input2);
+    assert.ok(isValidInput2 === false);
+  });
 });
