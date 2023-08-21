@@ -10,7 +10,7 @@ const showDescription = () => {
     "This process will return all pairs of integers from a list that sum to a given value. Example:"
   );
   console.log(`${"Input:".yellow} \n0,1,2,3,4,5,6,7,8,9,10 10`);
-  console.log(`${"Output:".yellow} \n6,4 \n7,3 \n8,2 \n9,1 \n10,0\n`);
+  console.log(`${"Output:".yellow} \n+ 4,6 \n+ 3,7 \n+ 2,8 \n+ 1,9 \n+ 0,10\n`);
 };
 
 const requestInput = () =>
@@ -34,8 +34,21 @@ const showInvalidInputFormat = () => {
   console.log("Invalid input. Try again.".red);
 };
 
+const showPairs = (pairs) => {
+  if (pairs.length === 0) {
+    console.log("No pairs found.".red);
+  } else {
+    pairs.forEach((pair) => {
+      const p1 = pair[0];
+      const p2 = pair[1];
+      console.log(`+ ${p1.toString().green}, ${p2.toString().green}`);
+    });
+  }
+};
+
 module.exports = {
   showDescription,
   requestInput,
   showInvalidInputFormat,
+  showPairs,
 };

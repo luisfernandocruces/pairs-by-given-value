@@ -2,21 +2,35 @@ const {
   showDescription,
   requestInput,
   showInvalidInputFormat,
+  showPairs,
 } = require("./utils/messages");
-const validateFormat = require("./utils/validateFormat");
+const validateInput = require("./utils/validateInput");
+const getPairsByGivenNumber = require("./utils/getPairsByGivenNumber");
 
 const main = async () => {
   showDescription();
   let input;
 
-  do {
+  while (true) {
     input = await requestInput();
-    const isValidInput = validateFormat(input);
+    if (input === "exit") break;
 
-    if (input !== "exit" && !isValidInput) {
+    const isValidInput = validateInput(input);
+
+    if (!isValidInput) {
       showInvalidInputFormat();
+
+      // eslint-disable-next-line no-continue
+      continue;
     }
-  } while (input !== "exit");
+
+    const numbers = input.split(" ")[0].split(",");
+    const givenValue = input.split(" ")[1];
+
+    const pairs = getPairsByGivenNumber(numbers, givenValue);
+
+    showPairs(pairs);
+  }
 };
 
 main();
