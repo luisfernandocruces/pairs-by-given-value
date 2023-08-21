@@ -1,4 +1,4 @@
-const validateFormat = (input) => {
+const validateInput = (input) => {
   if (!input) return false;
 
   const separatedInput = input.trim().split(" ");
@@ -19,4 +19,4 @@ const validateFormat = (input) => {
   return true;
 };
 
-module.exports = validateFormat;
+module.exports = validateInput;
